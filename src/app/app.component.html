@@ -1,0 +1,69 @@
+<section class="login-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 login-sec">
+        <h2 class="text-center">Cardinal App</h2>
+        <form
+          class="login-form"
+          [formGroup]="inquiryForm"
+          (ngSubmit)="onSubmit()"
+        >
+          <div class="form-group">
+            <label class="text-uppercase">Phone Number *</label>
+
+            <select
+              class="form-control"
+              formControlName="phone_number"
+              [(ngModel)]="userNumber"
+            >
+              <option *ngFor="let obj of phoneNumber">{{obj.number}}</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="text-uppercase">Message *</label>
+            <textarea
+              class="form-control"
+              formControlName="message"
+              [(ngModel)]="userMessage"
+              rows="5"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <span id="success">Message Send Successfully</span>
+            <span id="error">Phone Number not yet registed</span>
+            <button
+              [disabled]="!inquiryForm.valid"
+              type="submit"
+              class="btn btn-login float-right"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-8 banner-sec">
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-ride="carousel"
+        >
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="banner-text">
+                  <!-- <h2>This is Heaven</h2> -->
+                  <!-- <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                  </p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
